@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import marketplace.abstractComponent.AbstractComponent;
+import marketplace.model.UserData;
 
 public class LoginPage extends AbstractComponent {
 	
@@ -25,15 +26,14 @@ public class LoginPage extends AbstractComponent {
 	@FindBy(xpath = "//span[text()='Selanjutnya']/parent::button")
 	WebElement nextButton;
 	
-	public void loginApplication() {
+	public void loginApplication(UserData user) {
 		WebElement emailInput = waitForElementToAppear(emailInputLocator);
-		emailInput.sendKeys("testingjaja333@gmail.com");
+		emailInput.sendKeys(user.getEmail());
 		nextButton.sendKeys(Keys.ENTER);
 		
 		WebElement passwordInput = waitForElementToAppear(passwordInputLocator);
-		passwordInput.sendKeys("Binetest1!");
+		passwordInput.sendKeys(user.getPassword());
 		nextButton.click();
-		
 	}
 
 }
