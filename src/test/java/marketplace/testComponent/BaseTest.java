@@ -38,7 +38,7 @@ public class BaseTest {
 	
 	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+//		driver.quit();
 	}
 	
 	public static <T> List<T> readJsonFile(String filePath, Class<T> classData) throws StreamReadException, DatabindException, IOException {

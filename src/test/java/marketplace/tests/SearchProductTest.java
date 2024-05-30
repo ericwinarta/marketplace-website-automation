@@ -31,7 +31,7 @@ public class SearchProductTest extends BaseTest {
 	
 	@DataProvider
 	public Iterator<Object[]> userData() throws StreamReadException, DatabindException, IOException {
-		String jsonFile = System.getProperty("user.dir") + "\\src\\test\\java\\marketplace\\data\\login-data.json";
+		String jsonFile = System.getProperty("user.dir") + "\\src\\test\\java\\marketplace\\data\\order-product-data.json";
 		List<UserData> users = readJsonFile(jsonFile, UserData.class);
 		return users.stream().map(user -> new Object[]{user}).iterator();
 	}

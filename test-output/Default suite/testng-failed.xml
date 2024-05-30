@@ -5,7 +5,7 @@
     <classes>
       <class name="marketplace.tests.SearchProductTest">
         <methods>
-          <include name="homeBannerSearchProduct" invocation-numbers="1"/>
+          <include name="homeBannerSearchProduct" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="launchApplication"/>
         </methods>
