@@ -2,27 +2,27 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-31T00:21:43 WIB" name="Default suite" finished-at="2024-05-31T00:21:49 WIB" duration-ms="6046">
+  <suite started-at="2024-05-31T00:32:19 WIB" name="Default suite" finished-at="2024-05-31T00:32:26 WIB" duration-ms="6401">
     <groups>
     </groups>
-    <test started-at="2024-05-31T00:21:43 WIB" name="Default test" finished-at="2024-05-31T00:21:49 WIB" duration-ms="6046">
+    <test started-at="2024-05-31T00:32:19 WIB" name="Default test" finished-at="2024-05-31T00:32:26 WIB" duration-ms="6401">
       <class name="marketplace.tests.SearchProductTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.SearchProductTest@7b98f307]" started-at="2024-05-31T00:21:43 WIB" name="launchApplication" finished-at="2024-05-31T00:21:45 WIB" duration-ms="2281" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.SearchProductTest@7b98f307]" started-at="2024-05-31T00:32:20 WIB" name="launchApplication" finished-at="2024-05-31T00:32:22 WIB" duration-ms="2313" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="homeBannerSearchProduct(marketplace.model.UserData)[pri:0, instance:marketplace.tests.SearchProductTest@7b98f307]" started-at="2024-05-31T00:21:45 WIB" name="homeBannerSearchProduct" data-provider="userData" finished-at="2024-05-31T00:21:49 WIB" duration-ms="3588" status="PASS">
+        <test-method signature="homeBannerSearchProduct(marketplace.model.UserData)[pri:0, instance:marketplace.tests.SearchProductTest@7b98f307]" started-at="2024-05-31T00:32:22 WIB" name="homeBannerSearchProduct" data-provider="userData" finished-at="2024-05-31T00:32:26 WIB" duration-ms="3911" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[marketplace.model.UserData@1af1347d]]>
+                <![CDATA[marketplace.model.UserData@30457e14]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- homeBannerSearchProduct -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.SearchProductTest@7b98f307]" started-at="2024-05-31T00:21:49 WIB" name="tearDown" finished-at="2024-05-31T00:21:49 WIB" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.SearchProductTest@7b98f307]" started-at="2024-05-31T00:32:26 WIB" name="tearDown" finished-at="2024-05-31T00:32:26 WIB" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
