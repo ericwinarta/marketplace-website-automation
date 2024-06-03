@@ -1,6 +1,7 @@
 package marketplace.abstractComponent;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +11,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import marketplace.pageObject.CartPage;
 import marketplace.pageObject.LoginPage;
+import marketplace.pageObject.ProductListPage;
 
 public class AbstractComponent {
 	
@@ -24,6 +27,15 @@ public class AbstractComponent {
 	@FindBy(css = ".bmd-login-button")
 	WebElement loginMenuButton;
 	
+	@FindBy(css = ".bmd-navbar-container input[type='search']")
+	WebElement headerSearchInput;
+	
+	@FindBy(css = ".bmd-navbar-container button[title='Pencarian']")
+	WebElement headerSearchButton;
+	
+	@FindBy(css = ".bmd-btn-cart")
+	WebElement cartMenuButton;
+	
 	public LoginPage goToLogin() {
 		loginMenuButton.click();
 		LoginPage loginPage = new LoginPage(driver);
@@ -33,6 +45,24 @@ public class AbstractComponent {
 	public WebElement waitForElementToAppear(By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+	
+	public List<WebElement> waitForAllElementsToAppear(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+	}
+	
+	public ProductListPage searchByHeader(String productName) {
+		headerSearchInput.sendKeys(productName);
+		headerSearchButton.click();
+		ProductListPage productListPage = new ProductListPage(driver);
+		return productListPage;
+	}
+	
+	public CartPage goToCartPage() {
+		cartMenuButton.click();
+		CartPage cartPage = new CartPage(driver);
+		return cartPage;
 	}
 
 }
