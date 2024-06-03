@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="marketplace.tests.SearchProductTest">
+      <class name="marketplace.tests.CheckoutProductTest">
         <methods>
-          <include name="homeBannerSearchProduct" invocation-numbers="0"/>
+          <include name="checkoutProduct" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="launchApplication"/>
         </methods>
-      </class> <!-- marketplace.tests.SearchProductTest -->
+      </class> <!-- marketplace.tests.CheckoutProductTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

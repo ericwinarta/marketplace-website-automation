@@ -1,32 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-31T09:25:42 WIB" name="Default suite" finished-at="2024-05-31T09:25:51 WIB" duration-ms="9706">
+  <suite started-at="2024-06-03T19:24:18 WIB" name="Default suite" finished-at="2024-06-03T19:24:40 WIB" duration-ms="21762">
     <groups>
     </groups>
-    <test started-at="2024-05-31T09:25:42 WIB" name="Default test" finished-at="2024-05-31T09:25:51 WIB" duration-ms="9706">
-      <class name="marketplace.tests.SearchProductTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.SearchProductTest@7b98f307]" started-at="2024-05-31T09:25:42 WIB" name="launchApplication" finished-at="2024-05-31T09:25:47 WIB" duration-ms="5513" status="PASS">
+    <test started-at="2024-06-03T19:24:18 WIB" name="Default test" finished-at="2024-06-03T19:24:40 WIB" duration-ms="21762">
+      <class name="marketplace.tests.CheckoutProductTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.CheckoutProductTest@7526515b]" started-at="2024-06-03T19:24:19 WIB" name="launchApplication" finished-at="2024-06-03T19:24:22 WIB" duration-ms="3179" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="homeBannerSearchProduct(marketplace.model.UserData)[pri:0, instance:marketplace.tests.SearchProductTest@7b98f307]" started-at="2024-05-31T09:25:47 WIB" name="homeBannerSearchProduct" data-provider="userData" finished-at="2024-05-31T09:25:51 WIB" duration-ms="3981" status="PASS">
+        <test-method signature="checkoutProduct(marketplace.model.UserData)[pri:0, instance:marketplace.tests.CheckoutProductTest@7526515b]" started-at="2024-06-03T19:24:22 WIB" name="checkoutProduct" data-provider="userData" finished-at="2024-06-03T19:24:40 WIB" duration-ms="18228" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[marketplace.model.UserData@1af1347d]]>
+                <![CDATA[marketplace.model.UserData@5c20ffa8]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Check product all total price in product cart is correct expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Check product all total price in product cart is correct expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at marketplace.tests.CheckoutProductTest.checkoutProduct(CheckoutProductTest.java:62)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- homeBannerSearchProduct -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.SearchProductTest@7b98f307]" started-at="2024-05-31T09:25:51 WIB" name="tearDown" finished-at="2024-05-31T09:25:51 WIB" duration-ms="0" status="PASS">
+        </test-method> <!-- checkoutProduct -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.CheckoutProductTest@7526515b]" started-at="2024-06-03T19:24:40 WIB" name="tearDown" finished-at="2024-06-03T19:24:40 WIB" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- marketplace.tests.SearchProductTest -->
+      </class> <!-- marketplace.tests.CheckoutProductTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
