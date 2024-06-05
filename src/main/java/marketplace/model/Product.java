@@ -2,9 +2,9 @@ package marketplace.model;
 
 public class Product {
 	
-	String name;
-	String color;
-	String size;
+	private String name;
+	private String color;
+	private String size;
 	
 	public String getName() {
 		return name;

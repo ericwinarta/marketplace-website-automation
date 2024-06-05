@@ -1,5 +1,7 @@
 package marketplace.tests;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
@@ -56,6 +58,7 @@ public class CheckoutProductTest extends BaseTest {
 		}
 		
 		CartPage cartPage = productDetailPage.goToCartPage();
+//		CartPage cartPage = landingPage.goToCartPage();
 		boolean isProductCartMatch = cartPage.verifyCartProduct(productData);
 		Assert.assertTrue(isProductCartMatch, "Match selected product with product displayed in cart");
 		
@@ -63,6 +66,10 @@ public class CheckoutProductTest extends BaseTest {
 		Assert.assertTrue(isProductPriceCorrect, "Check all total price in product cart is correct");
 		
 		CheckoutPage checkoutPage = cartPage.goToCheckoutPage();
+		checkoutPage.fillAddressForm(user.getAddress());
+		checkoutPage.chooseShippingDelivery(user.getShippingDelivery());
+		assertTrue(checkoutPage.verifyTotalPayment(), "Check summary total payment");
+		checkoutPage.openModalPaymentMethod();
 	}
 	
 	@DataProvider

@@ -1,6 +1,6 @@
 [
-    {
-      "email" : "testingjaja333@gmail.com",
+	{
+      "email" : "xabovi8902@fresec.com",
       "password" : "Binetest1!",
 	  "product" : [
 			{
@@ -13,6 +13,17 @@
 				"color" : "black onyx",
 				"size" : ""
 	  		}
-  		]
+  		],
+		"address" : {
+			"addressTitle" : "Rumah",
+			"fullName" : "Jeje Riawan",
+			"phoneNumber" : "888889189",
+			"addressDetail" : "JL Pluto Semesta no 9",
+			"province" : "DKI Jakarta",
+			"city" : "Jakarta Pusat",
+			"district" : "Gambir",
+			"subdistrict" : "Cideng - 10150"
+		},
+		"shippingDelivery" : "Wahana Kargo"
     }
 ]

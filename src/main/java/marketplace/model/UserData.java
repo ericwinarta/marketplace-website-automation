@@ -4,9 +4,11 @@ import java.util.List;
 
 public class UserData {
 	
-	String email;
-	String password;
-	List<Product> product;
+	private String email;
+	private String password;
+	private List<Product> product;
+	private Address address;
+	private String shippingDelivery;
 
 	public String getEmail() {
 		return email;
@@ -30,6 +32,22 @@ public class UserData {
 	
 	public void setProduct(List<Product> product) {
 		this.product = product;
+	}
+	
+	public Address getAddress() {
+		return address;
+	}
+	
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	public String getShippingDelivery() {
+		return shippingDelivery;
+	}
+	
+	public void setShippingDelivery(String shippingDelivery) {
+		this.shippingDelivery = shippingDelivery;
 	}
 
 }
