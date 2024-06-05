@@ -47,9 +47,19 @@ public class AbstractComponent {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 	
+	public Boolean waitForElementToDisappear(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+	}
+	
 	public List<WebElement> waitForAllElementsToAppear(By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+	}
+	
+	public WebElement waitForElementToClickable(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 	
 	public ProductListPage searchByHeader(String productName) {
@@ -57,6 +67,10 @@ public class AbstractComponent {
 		headerSearchButton.click();
 		ProductListPage productListPage = new ProductListPage(driver);
 		return productListPage;
+	}
+	
+	public int convertToPriceNumber(WebElement priceElement) {
+		return Integer.parseInt(priceElement.getText().replace(".", ""));
 	}
 	
 	public CartPage goToCartPage() {
