@@ -21,7 +21,7 @@ public class CartPage extends AbstractComponent {
 		PageFactory.initElements(driver, this);
 	}
 	
-	By cartProductListLocator = By.cssSelector(".td-product_name");
+	By cartProductListLocator = By.cssSelector(".o_cart_product");
 	
 	@FindBy(css = ".o_cart_product")
 	List<WebElement> cartProductList;
@@ -31,6 +31,9 @@ public class CartPage extends AbstractComponent {
 	
 	@FindBy(css = ".btn-primary")
 	WebElement buyNowButton;
+	
+	@FindBy(css = ".cart-container a[href='/']")
+	WebElement backToHomeButton;
 	
 	public boolean verifyCartProduct(List<Product> productData) {
 		waitForAllElementsToAppear(cartProductListLocator);
@@ -111,6 +114,26 @@ public class CartPage extends AbstractComponent {
 		}
 		
 		return true;
+	}
+	
+	public void clearAllCartProduct() {
+		By trashButtonLocator = By.cssSelector("a[title*='Remove']");
+		By deleteProductButtonLocator = By.cssSelector(".modal.show .js_delete_product");
+		
+		waitForAllElementsToAppear(cartProductListLocator);
+		int totalProduct = cartProductList.size();
+				
+		while(totalProduct > 0) {
+			WebElement firstTrashButton = cartProductList.get(0).findElement(trashButtonLocator);
+			firstTrashButton.click();
+			
+			WebElement deleteButton = waitForElementToAppear(deleteProductButtonLocator);
+			deleteButton.click();
+			totalProduct--;
+			waitForWebElementToDisappear(firstTrashButton);
+		}
+		
+		backToHomeButton.click();
 	}
 	
 	public CheckoutPage goToCheckoutPage() {
