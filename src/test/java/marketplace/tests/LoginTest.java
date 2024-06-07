@@ -31,5 +31,21 @@ public class LoginTest extends BaseTest {
 		return users.stream().map(user -> new Object[]{user}).iterator();	
 	}
 	
-
+	@Test(groups = {"smoke_test"})
+	public void loginWithInvalidEmail() {
+		String invalidEmail = "testing+failed@gmail.com";
+		LoginPage loginPage = landingPage.goToLogin();
+		String warningMessage = loginPage.verifyInvalidEmail(invalidEmail);
+		Assert.assertEquals(warningMessage, "Email belum terdaftar");
+	}
+	
+	@Test(groups = {"smoke_test"})
+	public void loginWithInvalidPassword() {
+		String email = "testingjaja333@gmail.com";
+		String invalidPassword = "Wrongpassword1!";
+		LoginPage loginPage = landingPage.goToLogin();
+		String warningMessage = loginPage.verifyInvalidPassword(email, invalidPassword);
+		Assert.assertEquals(warningMessage, "Login error! Kata sandi salah");
+	}
+	
 }

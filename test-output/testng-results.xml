@@ -1,32 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="0" failed="5" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-05T16:41:21 WIB" name="Default suite" finished-at="2024-06-05T16:42:06 WIB" duration-ms="45726">
+  <suite started-at="2024-06-07T20:34:30 WIB" name="Smoke Test Suite" finished-at="2024-06-07T20:35:39 WIB" duration-ms="69391">
     <groups>
+      <group name="smoke_test">
+        <method signature="CheckoutProductTest.checkoutProduct(marketplace.model.UserData)[pri:0, instance:marketplace.tests.CheckoutProductTest@6138e79a]" name="checkoutProduct" class="marketplace.tests.CheckoutProductTest"/>
+        <method signature="LoginTest.loginWithInvalidEmail()[pri:0, instance:marketplace.tests.LoginTest@3c9c0d96]" name="loginWithInvalidEmail" class="marketplace.tests.LoginTest"/>
+        <method signature="LoginTest.loginWithInvalidPassword()[pri:0, instance:marketplace.tests.LoginTest@3c9c0d96]" name="loginWithInvalidPassword" class="marketplace.tests.LoginTest"/>
+        <method signature="SearchProductTest.searchProduct(marketplace.model.UserData)[pri:0, instance:marketplace.tests.SearchProductTest@2dcd168a]" name="searchProduct" class="marketplace.tests.SearchProductTest"/>
+      </group> <!-- smoke_test -->
     </groups>
-    <test started-at="2024-06-05T16:41:21 WIB" name="Default test" finished-at="2024-06-05T16:42:06 WIB" duration-ms="45726">
+    <test started-at="2024-06-07T20:34:30 WIB" name="Smoke Test" finished-at="2024-06-07T20:35:39 WIB" duration-ms="69391">
       <class name="marketplace.tests.CheckoutProductTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.CheckoutProductTest@7526515b]" started-at="2024-06-05T16:41:21 WIB" name="launchApplication" finished-at="2024-06-05T16:41:24 WIB" duration-ms="2964" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.CheckoutProductTest@6138e79a]" started-at="2024-06-07T20:34:30 WIB" name="launchApplication" finished-at="2024-06-07T20:34:38 WIB" duration-ms="8174" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="checkoutProduct(marketplace.model.UserData)[pri:0, instance:marketplace.tests.CheckoutProductTest@7526515b]" started-at="2024-06-05T16:41:24 WIB" name="checkoutProduct" data-provider="userData" finished-at="2024-06-05T16:42:06 WIB" duration-ms="42457" status="PASS">
+        <test-method signature="checkoutProduct(marketplace.model.UserData)[pri:0, instance:marketplace.tests.CheckoutProductTest@6138e79a]" started-at="2024-06-07T20:34:38 WIB" name="checkoutProduct" data-provider="userData" finished-at="2024-06-07T20:35:08 WIB" duration-ms="29545" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[marketplace.model.UserData@7fedfe27]]>
+                <![CDATA[marketplace.model.UserData@7c850253]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Next button failed for 5 clicked attempt, after type email address]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Next button failed for 5 clicked attempt, after type email address
+at marketplace.pageObject.LoginPage.loginApplication(LoginPage.java:48)
+at marketplace.tests.CheckoutProductTest.checkoutProduct(CheckoutProductTest.java:33)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkoutProduct -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.CheckoutProductTest@7526515b]" started-at="2024-06-05T16:42:06 WIB" name="tearDown" finished-at="2024-06-05T16:42:06 WIB" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.CheckoutProductTest@6138e79a]" started-at="2024-06-07T20:35:08 WIB" name="tearDown" finished-at="2024-06-07T20:35:10 WIB" duration-ms="1903" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- marketplace.tests.CheckoutProductTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="marketplace.tests.LoginTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.LoginTest@3c9c0d96]" started-at="2024-06-07T20:34:30 WIB" name="launchApplication" finished-at="2024-06-07T20:34:35 WIB" duration-ms="5731" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="loginWithInvalidEmail()[pri:0, instance:marketplace.tests.LoginTest@3c9c0d96]" started-at="2024-06-07T20:34:35 WIB" name="loginWithInvalidEmail" finished-at="2024-06-07T20:34:55 WIB" duration-ms="19316" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Email belum terdaftar] but found [null]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Email belum terdaftar] but found [null]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at marketplace.tests.LoginTest.loginWithInvalidEmail(LoginTest.java:39)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.LoginTest@3c9c0d96]" started-at="2024-06-07T20:34:56 WIB" name="tearDown" finished-at="2024-06-07T20:34:58 WIB" duration-ms="1418" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.LoginTest@3c9c0d96]" started-at="2024-06-07T20:34:58 WIB" name="launchApplication" finished-at="2024-06-07T20:35:00 WIB" duration-ms="2257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="loginWithInvalidPassword()[pri:0, instance:marketplace.tests.LoginTest@3c9c0d96]" started-at="2024-06-07T20:35:00 WIB" name="loginWithInvalidPassword" finished-at="2024-06-07T20:35:18 WIB" duration-ms="17607" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])" because "passwordInput" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])" because "passwordInput" is null
+at marketplace.pageObject.LoginPage.verifyInvalidPassword(LoginPage.java:104)
+at marketplace.tests.LoginTest.loginWithInvalidPassword(LoginTest.java:47)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.LoginTest@3c9c0d96]" started-at="2024-06-07T20:35:18 WIB" name="tearDown" finished-at="2024-06-07T20:35:19 WIB" duration-ms="658" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- marketplace.tests.LoginTest -->
+      <class name="marketplace.tests.SearchProductTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.SearchProductTest@2dcd168a]" started-at="2024-06-07T20:34:30 WIB" name="launchApplication" finished-at="2024-06-07T20:34:33 WIB" duration-ms="3356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="searchProduct(marketplace.model.UserData)[pri:0, instance:marketplace.tests.SearchProductTest@2dcd168a]" started-at="2024-06-07T20:34:33 WIB" name="searchProduct" data-provider="userData" finished-at="2024-06-07T20:35:06 WIB" duration-ms="33027" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[marketplace.model.UserData@14675e51]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Next button failed for 5 clicked attempt, after type email address]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Next button failed for 5 clicked attempt, after type email address
+at marketplace.pageObject.LoginPage.loginApplication(LoginPage.java:48)
+at marketplace.tests.SearchProductTest.searchProduct(SearchProductTest.java:30)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProduct -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.SearchProductTest@2dcd168a]" started-at="2024-06-07T20:35:07 WIB" name="tearDown" finished-at="2024-06-07T20:35:07 WIB" duration-ms="302" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.SearchProductTest@2dcd168a]" started-at="2024-06-07T20:35:07 WIB" name="launchApplication" finished-at="2024-06-07T20:35:10 WIB" duration-ms="2372" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="searchProduct(marketplace.model.UserData)[pri:0, instance:marketplace.tests.SearchProductTest@2dcd168a]" started-at="2024-06-07T20:35:10 WIB" name="searchProduct" data-provider="userData" finished-at="2024-06-07T20:35:38 WIB" duration-ms="28849" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[marketplace.model.UserData@7eb0bca9]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Next button failed for 5 clicked attempt, after type email address]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Next button failed for 5 clicked attempt, after type email address
+at marketplace.pageObject.LoginPage.loginApplication(LoginPage.java:48)
+at marketplace.tests.SearchProductTest.searchProduct(SearchProductTest.java:30)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProduct -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.SearchProductTest@2dcd168a]" started-at="2024-06-07T20:35:39 WIB" name="tearDown" finished-at="2024-06-07T20:35:39 WIB" duration-ms="298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- marketplace.tests.SearchProductTest -->
+    </test> <!-- Smoke Test -->
+  </suite> <!-- Smoke Test Suite -->
 </testng-results>

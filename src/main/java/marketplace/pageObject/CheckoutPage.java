@@ -63,7 +63,7 @@ public class CheckoutPage extends AbstractComponent {
 	
 	public void fillAddressForm(Address userAddress) {
 		try {
-			waitForElementToAppear(addAddressButtonLocator);
+			waitForElementToAppear(addAddressButtonLocator, 2);
 			
 			if (addAddressButton.isDisplayed()) {
 				addAddressButton.click();
@@ -80,7 +80,7 @@ public class CheckoutPage extends AbstractComponent {
 				waitForElementToDisappear(addressModalLocator);
 			}
 		} catch (Exception e) {
-			System.out.println("Add button not appear");
+			//Add button not appear
 		}
 	}
 	
@@ -93,7 +93,7 @@ public class CheckoutPage extends AbstractComponent {
 		driver.findElement(inputLocator).click();
 		waitForElementToAppear(inputActiveLocator);
 		List<WebElement> options = driver.findElements(dropdownOptionsLocator);
-		WebElement selectedOption = options.stream().filter(prov -> prov.getText().equalsIgnoreCase(value)).findFirst().orElse(null);
+		WebElement selectedOption = options.stream().filter(opt -> opt.getText().equalsIgnoreCase(value)).findFirst().orElse(null);
 		selectedOption.click();
 	}
 	

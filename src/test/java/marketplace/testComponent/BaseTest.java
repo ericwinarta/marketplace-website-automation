@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,7 +22,7 @@ import marketplace.pageObject.LandingPage;
 
 public class BaseTest {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	public LandingPage landingPage;
 	
 	public void initializeDriver() {
@@ -28,7 +31,7 @@ public class BaseTest {
 		driver.manage().window().maximize();
 	}
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public LandingPage launchApplication() {
 		initializeDriver();
 		landingPage = new LandingPage(driver);
@@ -36,15 +39,24 @@ public class BaseTest {
 		return landingPage;
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
-//		driver.quit();
+		driver.quit();
 	}
 	
 	public static <T> List<T> readJsonFile(String filePath, Class<T> classData) throws StreamReadException, DatabindException, IOException {
 		ObjectMapper objectMapper = new ObjectMapper();
 		
 		return objectMapper.readValue(new File(filePath), objectMapper.getTypeFactory().constructCollectionType(List.class, classData));
+	}
+	
+	public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		String filePath = System.getProperty("user.dir") + "//test-reports//" + testCaseName + ".png";
+		File file = new File(filePath);
+		FileUtils.copyFile(source, file);
+		return filePath;
 	}
 
 }

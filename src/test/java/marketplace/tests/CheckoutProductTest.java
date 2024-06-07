@@ -24,14 +24,20 @@ import marketplace.testComponent.BaseTest;
 
 public class CheckoutProductTest extends BaseTest {
 	
-	@Test(dataProvider = "userData")
+	@Test(dataProvider = "userData", groups = {"smoke_test"})
 	public void checkoutProduct(UserData user) {
+		List<Product> productData = user.getProduct();
+		int totalProduct = productData.size();
 		
 		LoginPage loginPage = landingPage.goToLogin();
 		loginPage.loginApplication(user);
 		
-		List<Product> productData = user.getProduct();
-		int totalProduct = productData.size();
+		//make sure product is empty in cart
+		if (landingPage.isProductExistInCart()) {
+			//remove all products in cart
+			CartPage cartPage = landingPage.goToCartPage();
+			cartPage.clearAllCartProduct();
+		}
 		
 		ProductListPage productListPage = null;
 		ProductDetailPage productDetailPage = null;
@@ -47,7 +53,8 @@ public class CheckoutProductTest extends BaseTest {
 				productDetailPage.searchByHeader(productName);
 			}
 			
-			productListPage.verifySearchProductName(productName);
+			boolean isProductNameMatch = productListPage.verifySearchProductName(productName);
+			Assert.assertTrue(isProductNameMatch, "Match the product name searched in list");
 			
 			productDetailPage = productListPage.selectProduct(product);
 			if (productDetailPage == null) {
@@ -58,7 +65,6 @@ public class CheckoutProductTest extends BaseTest {
 		}
 		
 		CartPage cartPage = productDetailPage.goToCartPage();
-//		CartPage cartPage = landingPage.goToCartPage();
 		boolean isProductCartMatch = cartPage.verifyCartProduct(productData);
 		Assert.assertTrue(isProductCartMatch, "Match selected product with product displayed in cart");
 		
