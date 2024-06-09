@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-06-09T17:17:32 WIB" name="Suite" finished-at="2024-06-09T17:18:57 WIB" duration-ms="84816">
+    <groups>
+      <group name="error_validation">
+        <method signature="LoginTest.loginWithInvalidEmail()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" name="loginWithInvalidEmail" class="marketplace.tests.LoginTest"/>
+        <method signature="LoginTest.loginWithInvalidPassword()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" name="loginWithInvalidPassword" class="marketplace.tests.LoginTest"/>
+      </group> <!-- error_validation -->
+      <group name="smoke_test">
+        <method signature="LoginTest.loginApplication(marketplace.model.UserData)[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" name="loginApplication" class="marketplace.tests.LoginTest"/>
+      </group> <!-- smoke_test -->
+    </groups>
+    <test started-at="2024-06-09T17:17:32 WIB" name="Test" finished-at="2024-06-09T17:18:57 WIB" duration-ms="84816">
+      <class name="marketplace.tests.LoginTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:17:32 WIB" name="launchApplication" finished-at="2024-06-09T17:17:35 WIB" duration-ms="2648" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="loginApplication(marketplace.model.UserData)[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:17:35 WIB" name="loginApplication" data-provider="login-data-provider" finished-at="2024-06-09T17:17:43 WIB" duration-ms="8905" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[marketplace.model.UserData@6eaa21d8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginApplication -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:17:43 WIB" name="tearDown" finished-at="2024-06-09T17:17:44 WIB" duration-ms="300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:17:44 WIB" name="launchApplication" finished-at="2024-06-09T17:17:46 WIB" duration-ms="1974" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="loginApplication(marketplace.model.UserData)[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:17:46 WIB" name="loginApplication" data-provider="login-data-provider" finished-at="2024-06-09T17:17:54 WIB" duration-ms="8536" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[marketplace.model.UserData@3c35c345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginApplication -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:17:54 WIB" name="tearDown" finished-at="2024-06-09T17:17:55 WIB" duration-ms="266" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:17:55 WIB" name="launchApplication" finished-at="2024-06-09T17:17:57 WIB" duration-ms="1918" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="loginWithInvalidEmail()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:17:57 WIB" name="loginWithInvalidEmail" finished-at="2024-06-09T17:18:24 WIB" duration-ms="27871" status="FAIL">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Next button failed for 5 clicked attempt, after type email address]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Next button failed for 5 clicked attempt, after type email address
+at marketplace.pageObject.LoginPage.inputEmailNextButtonAttempt(LoginPage.java:80)
+at marketplace.pageObject.LoginPage.verifyInvalidEmail(LoginPage.java:48)
+at marketplace.tests.LoginTest.loginWithInvalidEmail(LoginTest.java:38)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:18:25 WIB" name="tearDown" finished-at="2024-06-09T17:18:25 WIB" duration-ms="250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:18:25 WIB" name="launchApplication" finished-at="2024-06-09T17:18:28 WIB" duration-ms="3074" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="loginWithInvalidPassword()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:18:28 WIB" name="loginWithInvalidPassword" finished-at="2024-06-09T17:18:56 WIB" duration-ms="27621" status="FAIL">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Next button failed for 5 clicked attempt, after type email address]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Next button failed for 5 clicked attempt, after type email address
+at marketplace.pageObject.LoginPage.inputEmailNextButtonAttempt(LoginPage.java:80)
+at marketplace.pageObject.LoginPage.verifyInvalidPassword(LoginPage.java:57)
+at marketplace.tests.LoginTest.loginWithInvalidPassword(LoginTest.java:47)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:marketplace.tests.LoginTest@7e4204e2]" started-at="2024-06-09T17:18:56 WIB" name="tearDown" finished-at="2024-06-09T17:18:57 WIB" duration-ms="223" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- marketplace.tests.LoginTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

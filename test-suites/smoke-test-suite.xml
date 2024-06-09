@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Smoke Test Suite">
+	<groups>
+		<run>
+			<include name="smoke_test" />
+		</run>
+	</groups>
+	<listeners>
+		<listener class-name="marketplace.testComponent.Listeners"></listener>
+	</listeners>
+	<test thread-count="5" name="Smoke Test">
+		<classes>
+			<class name="marketplace.tests.RegisterTest" />
+			<class name="marketplace.tests.LoginTest" /> 
+			<class name="marketplace.tests.CheckoutProductTest" /> 
+			<class name="marketplace.tests.SearchProductTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
