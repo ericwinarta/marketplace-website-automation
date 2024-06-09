@@ -1,4 +1,4 @@
 
 target/classes/META-INF/maven/marketplace/marketplace-website/pom.properties
-/test-output
-/test-output
+test-output/
+target/
