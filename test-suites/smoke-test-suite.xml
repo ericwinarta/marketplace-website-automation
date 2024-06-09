@@ -11,6 +11,7 @@
 	</listeners>
 	<test thread-count="5" name="Smoke Test">
 		<classes>
+			<class name="marketplace.tests.RegisterTest" />
 			<class name="marketplace.tests.LoginTest" /> 
 			<class name="marketplace.tests.CheckoutProductTest" /> 
 			<class name="marketplace.tests.SearchProductTest" />
