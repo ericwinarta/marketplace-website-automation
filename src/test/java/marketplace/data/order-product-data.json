@@ -2,6 +2,9 @@
 	{
       "email" : "testingjeje555@gmail.com",
       "password" : "Binetest1!",
+	  "firstName" : "Jeje",
+	  "lastName" : "Riawan",
+	  "phoneNumber" : "812284829", 
 	  "product" : [
 			{
 				"name" : "apple iphone 15",
