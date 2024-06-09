@@ -18,7 +18,6 @@ import marketplace.pageObject.LoginPage;
 import marketplace.pageObject.ProductDetailPage;
 import marketplace.pageObject.ProductListPage;
 import marketplace.testComponent.BaseTest;
-import marketplace.testComponent.BaseTestWithLogin;
 
 public class SearchProductTest extends BaseTest {
 	
