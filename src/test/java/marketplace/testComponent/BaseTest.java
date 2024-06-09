@@ -1,16 +1,19 @@
 package marketplace.testComponent;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -25,14 +28,27 @@ public class BaseTest {
 	public WebDriver driver;
 	public LandingPage landingPage;
 	
-	public void initializeDriver() {
-		driver = new ChromeDriver();
+	public void initializeDriver() throws IOException {
+		Properties prop = new Properties();
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\marketplace\\resources\\GlobalData.properties");
+		prop.load(fis);
+		
+		String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
+		
+		if (browserName.contains("chrome")) {
+			driver = new ChromeDriver();
+		} else if (browserName.contains("firefox")) {
+			driver = new FirefoxDriver();
+		} else if (browserName.contains("edge")) {
+			driver = new EdgeDriver();
+		}
+		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
 	}
 	
 	@BeforeMethod(alwaysRun = true)
-	public LandingPage launchApplication() {
+	public LandingPage launchApplication() throws IOException {
 		initializeDriver();
 		landingPage = new LandingPage(driver);
 		landingPage.goToApp();

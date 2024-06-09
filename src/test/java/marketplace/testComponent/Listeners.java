@@ -37,9 +37,9 @@ public class Listeners extends BaseTest implements ITestListener {
 		
 		String methodName = result.getMethod().getMethodName();
 		Object[] parameters = result.getParameters();
+		
 		if (parameters.length > 0) {
 			String parametersId = parameters[0].toString().split("@")[1];
-			System.out.println(parametersId);
 			methodName = methodName + "_" + parametersId;
 		}
 		
@@ -76,9 +76,7 @@ public class Listeners extends BaseTest implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext context) {
-		System.out.println("get name " + context.getName());
-		String startDate = new SimpleDateFormat("yyyyMMdd_HHmmss").format(context.getStartDate());
-		System.out.println("start date" + startDate);
+//		String startDate = new SimpleDateFormat("yyyyMMdd_HHmmss").format(context.getStartDate());
 	}
 
 	@Override

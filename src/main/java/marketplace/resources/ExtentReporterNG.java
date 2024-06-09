@@ -16,7 +16,5 @@ public class ExtentReporterNG {
 		report.setSystemInfo("Tester Name", "Eric Win");
 		return report;
 	}
-	
-//	public void setReport
 
 }

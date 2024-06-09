@@ -17,21 +17,21 @@ import marketplace.testComponent.BaseTest;
 
 public class LoginTest extends BaseTest {
 	
-	@Test(dataProvider = "userData")
+	@Test(dataProvider = "login-data-provider", dataProviderClass = LoginTest.class , groups = {"smoke_test"})
 	public void loginApplication(UserData user) {
 		LoginPage loginPage = landingPage.goToLogin();
 		loginPage.loginApplication(user);
 		Assert.assertTrue(landingPage.verifyAccountLoggedIn());
 	}
 	
-	@DataProvider
+	@DataProvider(name = "login-data-provider")
 	public Iterator<Object[]> userData() throws StreamReadException, DatabindException, IOException {
 		String jsonFile = System.getProperty("user.dir") + "\\src\\test\\java\\marketplace\\data\\login-data.json";
 		List<UserData> users = readJsonFile(jsonFile, UserData.class);
 		return users.stream().map(user -> new Object[]{user}).iterator();	
 	}
 	
-	@Test(groups = {"smoke_test"})
+	@Test(groups = {"error_validation"})
 	public void loginWithInvalidEmail() {
 		String invalidEmail = "testing+failed@gmail.com";
 		LoginPage loginPage = landingPage.goToLogin();
@@ -39,7 +39,7 @@ public class LoginTest extends BaseTest {
 		Assert.assertEquals(warningMessage, "Email belum terdaftar");
 	}
 	
-	@Test(groups = {"smoke_test"})
+	@Test(groups = {"error_validation"})
 	public void loginWithInvalidPassword() {
 		String email = "testingjaja333@gmail.com";
 		String invalidPassword = "Wrongpassword1!";
