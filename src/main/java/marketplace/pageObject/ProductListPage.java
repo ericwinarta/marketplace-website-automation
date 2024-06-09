@@ -37,7 +37,15 @@ public class ProductListPage extends AbstractComponent {
 	}
 	
 	public ProductDetailPage selectProduct(Product product) {
-		String selectedProductName = (product.getName() + " " + product.getSize()).toLowerCase();
+		String selectedProductName = product.getName();
+		String size = product.getSize();
+		String color = product.getColor();
+		
+		if (!size.isEmpty() && !color.isEmpty()) {
+		    selectedProductName += " " + size + " - " + color;
+		} else if (!size.isEmpty() || !color.isEmpty()) {
+		    selectedProductName += " " + (size.isEmpty() ? color : size);
+		}
 		
 		boolean isProductFound = false;
 		
@@ -45,7 +53,7 @@ public class ProductListPage extends AbstractComponent {
 			WebElement productLink = productCards.get(i).findElement(By.cssSelector("a"));
 			String productName = productCards.get(i).findElement(By.cssSelector("h6")).getText().toLowerCase();
 			
-			if (productName.contains(selectedProductName)) {
+			if (productName.equalsIgnoreCase(selectedProductName.toLowerCase())) {
 				isProductFound = true;
 				productLink.click();
 				break;
