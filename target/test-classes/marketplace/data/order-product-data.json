@@ -1,0 +1,32 @@
+[
+	{
+      "email" : "testingjeje555@gmail.com",
+      "password" : "Binetest1!",
+	  "firstName" : "Jeje",
+	  "lastName" : "Riawan",
+	  "phoneNumber" : "812284829", 
+	  "product" : [
+			{
+				"name" : "apple iphone 15",
+				"color" : "black",
+				"size" : "128GB"
+	  		},
+			{
+				"name" : "samsung galaxy buds2",
+				"color" : "black onyx",
+				"size" : ""
+	  		}
+  		],
+		"address" : {
+			"addressTitle" : "Rumah",
+			"fullName" : "Jeje Riawan",
+			"phoneNumber" : "888889189",
+			"addressDetail" : "JL Pluto Semesta no 9",
+			"province" : "DKI Jakarta",
+			"city" : "Jakarta Pusat",
+			"district" : "Gambir",
+			"subdistrict" : "Cideng - 10150"
+		},
+		"shippingDelivery" : "Wahana Kargo"
+    }
+]

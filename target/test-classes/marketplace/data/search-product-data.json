@@ -1,0 +1,29 @@
+[
+	{
+      "email" : "niwih78932@eqvox.com",
+      "password" : "Binetest1!",
+	  "product" : [
+			{
+				"name" : "samsung galaxy s24",
+				"color" : "Onyx Black",
+				"size" : "8GB/256GB"
+	  		},
+			{
+				"name" : "XIAOMI 22.5W Power Bank 10000mAh",
+				"color" : "",
+				"size" : ""
+	  		}
+  		]
+    },
+	{
+      "email" : "ny479@navalcadets.com",
+      "password" : "Binetest1!",
+	  "product" : [
+			{
+				"name" : "cosmos kipas angin",
+				"color" : "",
+				"size" : ""
+	  		}
+  		]
+    }
+]

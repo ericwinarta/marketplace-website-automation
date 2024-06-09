@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jun 09 15:45:15 WIB 2024</td>
+<td>Started on:</td><td>Sun Jun 09 18:16:44 WIB 2024</td>
 </tr>
-<tr><td>Total time:</td><td>43 seconds (43220 ms)</td>
+<tr><td>Total time:</td><td>29 seconds (29298 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,10 +76,11 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='marketplace.tests.RegisterTest.register()'><b>register</b><br>Test class: marketplace.tests.RegisterTest<br>Parameters: marketplace.model.UserData@201aa8c1</td>
-<td><div><pre>java.lang.RuntimeException: Register button failed for 5 clicked attempt
-	at marketplace.pageObject.RegisterPage.registerPersonalAccount(RegisterPage.java:87)
-	at marketplace.tests.RegisterTest.register(RegisterTest.java:26)
+<td title='marketplace.tests.CheckoutProductTest.checkoutProduct()'><b>checkoutProduct</b><br>Test class: marketplace.tests.CheckoutProductTest<br>Parameters: marketplace.model.UserData@201aa8c1</td>
+<td><div><pre>java.lang.RuntimeException: Next button failed for 5 clicked attempt, after type email address
+	at marketplace.pageObject.LoginPage.inputEmailNextButtonAttempt(LoginPage.java:80)
+	at marketplace.pageObject.LoginPage.loginApplication(LoginPage.java:38)
+	at marketplace.tests.CheckoutProductTest.checkoutProduct(CheckoutProductTest.java:33)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -108,10 +109,11 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2055472834", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2055472834'><pre>java.lang.RuntimeException: Register button failed for 5 clicked attempt
-	at marketplace.pageObject.RegisterPage.registerPersonalAccount(RegisterPage.java:87)
-	at marketplace.tests.RegisterTest.register(RegisterTest.java:26)
+</pre></div><a href='#' onClick='toggleBox("stack-trace101601906", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace101601906'><pre>java.lang.RuntimeException: Next button failed for 5 clicked attempt, after type email address
+	at marketplace.pageObject.LoginPage.inputEmailNextButtonAttempt(LoginPage.java:80)
+	at marketplace.pageObject.LoginPage.loginApplication(LoginPage.java:38)
+	at marketplace.tests.CheckoutProductTest.checkoutProduct(CheckoutProductTest.java:33)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -141,8 +143,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>30</td>
-<td>marketplace.tests.RegisterTest@7d0b7e3c</td></tr>
+<td>24</td>
+<td>marketplace.tests.CheckoutProductTest@7d0b7e3c</td></tr>
 </table><p>
 </body>
 </html>
