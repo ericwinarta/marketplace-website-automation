@@ -117,14 +117,15 @@ public class CartPage extends AbstractComponent {
 	}
 	
 	public void clearAllCartProduct() {
-		By trashButtonLocator = By.cssSelector("a[title*='Remove']");
+		By trashButtonLocator = By.cssSelector("a[data-bs-target*='deleteSingleProduct']");
 		By deleteProductButtonLocator = By.cssSelector(".modal.show .js_delete_product");
 		
 		waitForAllElementsToAppear(cartProductListLocator);
 		int totalProduct = cartProductList.size();
-				
+		
 		while(totalProduct > 0) {
 			WebElement firstTrashButton = cartProductList.get(0).findElement(trashButtonLocator);
+			waitForWebElementToClickable(firstTrashButton);
 			firstTrashButton.click();
 			
 			WebElement deleteButton = waitForElementToAppear(deleteProductButtonLocator);
