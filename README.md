@@ -35,8 +35,10 @@ This will trigger the test with the specified test profile id and specified brow
 
 browser_name available : chrome, firefox, edge.
 
+Open the test report in 'test-reports/automation-reports.html'. Copy the file path and paste it to the browser.
+
 ## Disclaimer
-**Important:** This project is automate a real ecommerce production website. For the checkout order product test, the automation will stop at the choose payment method page and will not continue to choose the payment method. So no order will be created.
+**Important:** This project is automate a real e-commerce production website. For the checkout order product test, the automation will stop at the choose payment method page and will not continue to choose the payment method. So no order will be created.
 
 ## Test Documentation
 All the test case and the summary of the test in this project is documented in [here](https://1drv.ms/x/s!AoHTMgcfutbmgtp2l1hj23j6Ern6PQ?e=bMefea)
